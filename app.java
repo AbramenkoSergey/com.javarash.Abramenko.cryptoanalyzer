@@ -16,8 +16,8 @@ public class app {
             choice = scan.nextInt();
             switch (choice) {
                 case 1: {
-                    //doCrypto
-                    break;
+                    doCrypto.doCryptoCesar();
+                break;
                 }
                 case 2: {
                     //decryption
@@ -28,13 +28,10 @@ public class app {
                     System.exit(0);
                 }
                 default: {
-                    System.out.println("Введите коренное  значение.");
+                    System.out.println("Введите корректное  значение.");
                 }
             }
 
-
         }
-
-
     }
 }
