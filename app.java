@@ -17,14 +17,16 @@ public class app {
             switch (choice) {
                 case 1: {
                     doCrypto.doCryptoCesar();
-                break;
+                    thanks();
+                    break;
                 }
                 case 2: {
-                    //decryption
+                    decryption.doDecryptionCesar();
+                    thanks();
+                    System.exit(0);
                     break;
                 }
                 case 3: {
-                    System.out.println("Спасибо за использование программы. До свидания.");
                     System.exit(0);
                 }
                 default: {
@@ -33,5 +35,9 @@ public class app {
             }
 
         }
+    }
+    private  static void thanks (){
+        System.out.println("Спасибо за использование программы. До свидания.");
+
     }
 }
