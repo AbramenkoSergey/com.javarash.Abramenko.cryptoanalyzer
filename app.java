@@ -12,31 +12,33 @@ public class app {
         System.out.println("Для выбора действия необходимо ввести номер выбранного вами пункта: ");
 
         Scanner scan = new Scanner(System.in);
-        while (true) {
-            choice = scan.nextInt();
-            switch (choice) {
-                case 1: {
-                    doCrypto.doCryptoCesar();
-                    thanks();
-                    break;
-                }
-                case 2: {
-                    decryption.doDecryptionCesar();
-                    thanks();
-                    System.exit(0);
-                    break;
-                }
-                case 3: {
-                    System.exit(0);
-                }
-                default: {
-                    System.out.println("Введите корректное  значение.");
-                }
-            }
+         while (true){
+             choice = scan.nextInt();
 
-        }
+             switch (choice) {
+                 case 1: {
+                     doCrypto.doCryptoCesar();
+                     thanks();
+                     break;
+                 }
+                 case 2: {
+                     decryption.doDecryptionCesar();
+                     thanks();
+                     System.exit(0);
+                     break;
+                 }
+                 case 3: {
+                     System.exit(0);
+                 }
+                 default: {
+                     System.out.println("Введите корректное  значение.");
+                 }
+             }
+
+         }
     }
-    private  static void thanks (){
+
+    private static void thanks() {
         System.out.println("Спасибо за использование программы. До свидания.");
 
     }

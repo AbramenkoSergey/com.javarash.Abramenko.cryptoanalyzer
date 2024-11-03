@@ -1,12 +1,9 @@
-import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 import java.util.Arrays;
 import java.util.List;
 
 
-public class decryption {
+public  class decryption {
 
     private static final List ALPHABET2 = Arrays.asList(
             'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З',
@@ -23,17 +20,17 @@ public class decryption {
         getIOandKey.repeatCh();
         String pathStringOut = getIOandKey.setPathOut();
         getIOandKey.repeatCh();
-
         try (FileReader fileReader = new FileReader(pathStringIn);
              BufferedReader bufferedReader = new BufferedReader(fileReader);
-             FileOutputStream fileOutputStream = new FileOutputStream(pathStringOut)) {
+             FileWriter fileWriter = new FileWriter(pathStringOut)) {
             while (bufferedReader.ready()) {
                 char chTmp = (char) bufferedReader.read();
                 char ch = Character.toUpperCase(chTmp);
                 int positionCh = serchCh(ch);
                 int answ = getCharAnsw(key, positionCh);
-                fileOutputStream.write(answ);
+                fileWriter.write(answ);
             }
+            fileWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
 
@@ -60,7 +57,7 @@ public class decryption {
         if (answIndex < 0){
             answIndex = answIndex * (-1);
         }
-        char charAnswTmp = (char) ALPHABET2.indexOf(answIndex);
+        char charAnswTmp = (char) ALPHABET2.get(answIndex);
         return Character.toLowerCase(charAnswTmp);
     }
 

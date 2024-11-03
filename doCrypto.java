@@ -1,7 +1,4 @@
-import java.io.BufferedReader;
-import java.io.FileOutputStream;
-import java.io.FileReader;
-import java.io.IOException;
+import java.io.*;
 
 import java.util.Arrays;
 import java.util.List;
@@ -22,11 +19,6 @@ public class doCrypto {
             'Ы', 'Ь', 'Э', 'Я',
             '.', ',', '«', '»', ':', '!', '?', ' ');
 
-
-
-
-
-
     public static void doCryptoCesar() {
         getIOandKey.repeatCh();
         String pathStringIn = getIOandKey.setPathIn();
@@ -37,14 +29,15 @@ public class doCrypto {
         getIOandKey.repeatCh();
         try (FileReader fileReader = new FileReader(pathStringIn);
              BufferedReader bufferedReader = new BufferedReader(fileReader);
-             FileOutputStream fileOutputStream = new FileOutputStream(pathStringOut)) {
+             FileWriter fileWriter = new FileWriter(pathStringOut)) {
             while (bufferedReader.ready()) {
                 char chTmp = (char) bufferedReader.read();
                 char ch = Character.toUpperCase(chTmp);
                  int positionCh = serchCh(ch);
                 int answ = getCharAnsw(key, positionCh);
-                fileOutputStream.write(answ);
+                fileWriter.write(answ);
             }
+            fileWriter.flush();
         } catch (IOException e) {
             e.printStackTrace();
 
@@ -71,7 +64,7 @@ public class doCrypto {
         if (answIndex < 0){
             answIndex = answIndex * (-1);
         }
-        char charAnswTmp = (char) ALPHABET2.indexOf(answIndex);
+        char charAnswTmp = (char) ALPHABET2.get(answIndex);
         return Character.toLowerCase(charAnswTmp);
     }
 }
