@@ -29,6 +29,7 @@ public class app {
                  }
                  case 3: {
                      System.exit(0);
+                     break;
                  }
                  default: {
                      System.out.println("Введите корректное  значение.");

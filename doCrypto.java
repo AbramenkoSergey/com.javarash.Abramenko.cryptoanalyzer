@@ -18,6 +18,7 @@ public class doCrypto {
             'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ',
             'Ы', 'Ь', 'Э', 'Я',
             '.', ',', '«', '»', ':', '!', '?', ' ');
+    public  static  int getSizeALPHABET = ALPHABET2.size();
 
     public static void doCryptoCesar() {
         getIOandKey.repeatCh();
@@ -39,6 +40,7 @@ public class doCrypto {
             }
             fileWriter.flush();
         } catch (IOException e) {
+            System.out.println("Что-то пошло не так"+e);
             e.printStackTrace();
 
         }
@@ -53,6 +55,7 @@ public class doCrypto {
             intCh = ALPHABET2.indexOf(obCh);
 
         } catch (NullPointerException e) {
+            System.out.println("Что-то пошло не так"+e);
             e.printStackTrace();
         }
         return intCh;
