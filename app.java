@@ -19,7 +19,9 @@ public class app {
                  case 1: {
                      doCrypto.doCryptoCesar();
                      thanks();
+                     System.exit(0);
                      break;
+
                  }
                  case 2: {
                      decryption.doDecryptionCesar();
@@ -29,6 +31,7 @@ public class app {
                  }
                  case 3: {
                      System.exit(0);
+
                      break;
                  }
                  default: {

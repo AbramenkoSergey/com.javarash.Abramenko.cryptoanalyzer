@@ -18,7 +18,7 @@ public class doCrypto {
             'Т', 'У', 'Ф', 'Х', 'Ц', 'Ч', 'Ш', 'Щ', 'Ъ',
             'Ы', 'Ь', 'Э', 'Я',
             '.', ',', '«', '»', ':', '!', '?', ' ');
-    public  static  int getSizeALPHABET = ALPHABET2.size();
+    public  static  int getSizeALPHABET = ALPHABET2.size()-1;
 
     public static void doCryptoCesar() {
         getIOandKey.repeatCh();
@@ -40,7 +40,7 @@ public class doCrypto {
             }
             fileWriter.flush();
         } catch (IOException e) {
-            System.out.println("Что-то пошло не так"+e);
+            System.out.println("Что-то пошло не так "+e);
             e.printStackTrace();
 
         }
@@ -55,18 +55,26 @@ public class doCrypto {
             intCh = ALPHABET2.indexOf(obCh);
 
         } catch (NullPointerException e) {
-            System.out.println("Что-то пошло не так"+e);
+            System.out.println("Что-то пошло не так "+e);
             e.printStackTrace();
         }
         return intCh;
     }
 
     private static char getCharAnsw(int key, int startPosition) {
-        int answIndex = (startPosition + key)% ALPHABET2.size();
+        int answIndex = 0;
 
-        if (answIndex < 0){
-            answIndex = answIndex * (-1);
+        if ( key == 0){
+            return Character.toLowerCase((char) ALPHABET2.get( startPosition));
+        } else if (key > 0) {
+            answIndex = (startPosition + key)% ALPHABET2.size();
+        } else  {
+            answIndex = (startPosition + key)% ALPHABET2.size();
+            if (answIndex < 0){
+                answIndex = getSizeALPHABET - Math.abs(answIndex);
+            }
         }
+
         char charAnswTmp = (char) ALPHABET2.get(answIndex);
         return Character.toLowerCase(charAnswTmp);
     }

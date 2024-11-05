@@ -27,7 +27,7 @@ public  class decryption {
                 char chTmp = (char) bufferedReader.read();
                 char ch = Character.toUpperCase(chTmp);
                 int positionCh = serchCh(ch);
-                int answ = getCharAnsw(key, positionCh);
+                int answ = getCharAnsw( key, positionCh);
                 fileWriter.write(answ);
             }
             fileWriter.flush();
@@ -52,11 +52,19 @@ public  class decryption {
     }
 
     private static char getCharAnsw(int key, int startPosition) {
-        int answIndex = (startPosition - key)% ALPHABET2.size();
+        int answIndex = 0;
 
-        if (answIndex < 0){
-            answIndex = answIndex * (-1);
+        if ( key == 0) {
+            return Character.toLowerCase((char) ALPHABET2.get( startPosition));
+        } else if (key > 0) {
+            answIndex = (startPosition - key)% ALPHABET2.size() ;
+
+        } else  {
+            answIndex =  (startPosition - key)% ALPHABET2.size() ;
+        }if (answIndex < 0){
+            answIndex = ALPHABET2.size() - Math.abs(answIndex);
         }
+
         char charAnswTmp = (char) ALPHABET2.get(answIndex);
         return Character.toLowerCase(charAnswTmp);
     }
