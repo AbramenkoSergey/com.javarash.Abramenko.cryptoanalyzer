@@ -40,8 +40,8 @@ public class doCrypto {
             }
             fileWriter.flush();
         } catch (IOException e) {
-            System.out.println("Что-то пошло не так "+e);
-            e.printStackTrace();
+            System.out.println("Что-то пошло не так "+ e);
+            //e.printStackTrace();
 
         }
 
@@ -55,8 +55,8 @@ public class doCrypto {
             intCh = ALPHABET2.indexOf(obCh);
 
         } catch (NullPointerException e) {
-            System.out.println("Что-то пошло не так "+e);
-            e.printStackTrace();
+            System.out.println("Что-то пошло не так "+ e);
+            //e.printStackTrace();
         }
         return intCh;
     }

@@ -9,7 +9,7 @@ public class app {
         System.out.println("1: Шифровать текст с использованием шифра Цезаря");
         System.out.println("2: Расшифровывать текст с использованием шифра Цезаря.");
         System.out.println("3: Выход");
-        System.out.println("Для выбора действия необходимо ввести номер выбранного вами пункта: ");
+        System.out.print("Для выбора действия необходимо ввести номер выбранного вами пункта: ");
 
         Scanner scan = new Scanner(System.in);
          while (true){

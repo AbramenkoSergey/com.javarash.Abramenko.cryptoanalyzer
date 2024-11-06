@@ -32,7 +32,7 @@ public  class decryption {
             }
             fileWriter.flush();
         } catch (IOException e) {
-            e.printStackTrace();
+            System.out.println("Что-то пошло не так "+ e);;
 
         }
 
@@ -46,7 +46,7 @@ public  class decryption {
             intCh = ALPHABET2.indexOf(obCh);
 
         } catch (NullPointerException e) {
-            e.printStackTrace();
+            System.out.println("Что-то пошло не так "+ e);
         }
         return intCh;
     }

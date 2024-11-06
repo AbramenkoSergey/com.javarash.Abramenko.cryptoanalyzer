@@ -24,7 +24,7 @@ public class getIOandKey {
              }
          } catch (InvalidPathException | IOException | SecurityException e) {
 
-             e.printStackTrace();
+             System.out.println("Что-то пошло не так "+ e);
              System.exit(0);
 
          }
@@ -60,16 +60,7 @@ public class getIOandKey {
         int localKey = -1;
 
         Scanner scanner = new Scanner(System.in);
-//        do{
-//            System.out.println("Введите ключ в диапазоне от "+ "-"+doCrypto.getSizeALPHABET+
-//                    " до "+ doCrypto.getSizeALPHABET);
-//            try  {
-//                localKey = Integer.parseInt(scanner.nextLine());
-//            } catch (NumberFormatException | NoSuchElementException e) {
-//                System.out.println("Вы ввели не число.");
-//            }
-//        }
-//        while (localKey > doCrypto.getSizeALPHABET);
+
         while ( localKey <= 0 ||  localKey > doCrypto.getSizeALPHABET){
                         System.out.println("Введите ключ в диапазоне от  1 " +
                                 " до "+ doCrypto.getSizeALPHABET);
