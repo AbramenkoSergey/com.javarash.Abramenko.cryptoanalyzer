@@ -20,19 +20,16 @@ public class app {
                      doCrypto.doCryptoCesar();
                      thanks();
                      System.exit(0);
-                     break;
+
 
                  }
                  case 2: {
                      decryption.doDecryptionCesar();
                      thanks();
                      System.exit(0);
-                     break;
                  }
                  case 3: {
                      System.exit(0);
-
-                     break;
                  }
                  default: {
                      System.out.println("Введите корректное  значение.");
