@@ -3,7 +3,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public  class decryption {
+public  class Decryption {
 
     private static final List ALPHABET2 = Arrays.asList(
             'А', 'Б', 'В', 'Г', 'Д', 'Е', 'Ё', 'Ж', 'З',
@@ -13,13 +13,13 @@ public  class decryption {
             '.', ',', '«', '»', ':', '!', '?', ' ');
 
     public static void doDecryptionCesar() {
-        getIOandKey.repeatCh();
-        String pathStringIn = getIOandKey.setPathIn();
-        getIOandKey.repeatCh();
-        int key = getIOandKey.setKey();
-        getIOandKey.repeatCh();
-        String pathStringOut = getIOandKey.setPathOut();
-        getIOandKey.repeatCh();
+        GetIOandKey.repeatCh();
+        String pathStringIn = GetIOandKey.setPathIn();
+        GetIOandKey.repeatCh();
+        int key = GetIOandKey.setKey();
+        GetIOandKey.repeatCh();
+        String pathStringOut = GetIOandKey.setPathOut();
+        GetIOandKey.repeatCh();
         try (FileReader fileReader = new FileReader(pathStringIn);
              BufferedReader bufferedReader = new BufferedReader(fileReader);
              FileWriter fileWriter = new FileWriter(pathStringOut)) {

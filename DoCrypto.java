@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.List;
 
 
-public class doCrypto {
+public class DoCrypto {
 
 //    private static final List ALPHABET1 = Arrays.asList(
 //            'а', 'б', 'в', 'г', 'д', 'е', 'ё', 'ж', 'з',
@@ -21,13 +21,13 @@ public class doCrypto {
     public  static  int getSizeALPHABET = ALPHABET2.size()-1;
 
     public static void doCryptoCesar() {
-        getIOandKey.repeatCh();
-        String pathStringIn = getIOandKey.setPathIn();
-        getIOandKey.repeatCh();
-        int key = getIOandKey.setKey();
-        getIOandKey.repeatCh();
-        String pathStringOut = getIOandKey.setPathOut();
-        getIOandKey.repeatCh();
+        GetIOandKey.repeatCh();
+        String pathStringIn = GetIOandKey.setPathIn();
+        GetIOandKey.repeatCh();
+        int key = GetIOandKey.setKey();
+        GetIOandKey.repeatCh();
+        String pathStringOut = GetIOandKey.setPathOut();
+        GetIOandKey.repeatCh();
         try (FileReader fileReader = new FileReader(pathStringIn);
              BufferedReader bufferedReader = new BufferedReader(fileReader);
              FileWriter fileWriter = new FileWriter(pathStringOut)) {

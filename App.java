@@ -1,6 +1,6 @@
 import java.util.Scanner;
 
-public class app {
+public class App {
     public static void main(String[] args) {
 
         int choice;
@@ -8,7 +8,8 @@ public class app {
         System.out.println("Добро пожаловать в программу.\nВыберите желаемое действие:");
         System.out.println("1: Шифровать текст с использованием шифра Цезаря");
         System.out.println("2: Расшифровывать текст с использованием шифра Цезаря.");
-        System.out.println("3: Выход");
+        System.out.println("3: Расшифровка методом Brute force");
+        System.out.println("4: Выход");
         System.out.print("Для выбора действия необходимо ввести номер выбранного вами пункта: ");
 
         Scanner scan = new Scanner(System.in);
@@ -17,18 +18,21 @@ public class app {
 
              switch (choice) {
                  case 1: {
-                     doCrypto.doCryptoCesar();
+                     DoCrypto.doCryptoCesar();
                      thanks();
                      System.exit(0);
-
-
                  }
                  case 2: {
-                     decryption.doDecryptionCesar();
+                     Decryption.doDecryptionCesar();
                      thanks();
                      System.exit(0);
-                 }
-                 case 3: {
+                 } case 3:{
+                     BruteForce.doBruteForce();
+                     thanks();
+                     System.exit(0);
+
+
+                 } case 4: {
                      System.exit(0);
                  }
                  default: {

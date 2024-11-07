@@ -7,12 +7,12 @@ import java.nio.file.Path;
 import java.util.NoSuchElementException;
 import java.util.Scanner;
 
-public class getIOandKey {
+public class GetIOandKey {
 
     public static String setPathIn() {
         String localPathStringIn = "";
 
-        System.out.print("Введи путь к сходному файлу: ");
+        System.out.print("Введи путь к исходному файлу: ");
          try  {
              InputStreamReader inputStreamReader = new InputStreamReader(System.in);
              BufferedReader bufferedReader = new BufferedReader(inputStreamReader);
@@ -61,9 +61,9 @@ public class getIOandKey {
 
         Scanner scanner = new Scanner(System.in);
 
-        while ( localKey <= 0 ||  localKey > doCrypto.getSizeALPHABET){
+        while ( localKey <= 0 ||  localKey > DoCrypto.getSizeALPHABET){
                         System.out.println("Введите ключ в диапазоне от  1 " +
-                                " до "+ doCrypto.getSizeALPHABET);
+                                " до "+ DoCrypto.getSizeALPHABET);
             try  {
                 localKey = Integer.parseInt(scanner.nextLine());
             } catch (NumberFormatException | NoSuchElementException e) {
@@ -77,4 +77,6 @@ public class getIOandKey {
     public static void repeatCh() {
         System.out.println("=".repeat(25));
     }
+
+
 }
